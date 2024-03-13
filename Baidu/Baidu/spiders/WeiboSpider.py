@@ -1,6 +1,7 @@
 # import sys
 import scrapy
 import re
+import requests
 from scrapy.crawler import CrawlerProcess
 
 # sys.path.append(r"WeiboSpider\WeiboSpider")
@@ -10,7 +11,18 @@ class WeiboSpider(scrapy.Spider):
     name = "Weibo"
     allowed_domains = ["s.weibo.com"]
     start_urls = ["https://s.weibo.com/top/summary?cate=socialevent"]
-
+    def start_requests(self):
+        headers = {
+            "Cookie": "SINAGLOBAL=802098472984.5715.1697621151360; _s_tentry=passport.weibo.com; Apache=7217574065072.632.1708774393705; ULV=1708774393716:5:1:1:7217574065072.632.1708774393705:1700046431628; XSRF-TOKEN=q90O1pJU6deXYnXkmzWhvAiN; PC_TOKEN=af130cdd6c; appkey=; WBtopGlobal_register_version=2024022419; ALF=1711366767; SUB=_2A25I3aU_DeRhGeFL7VIW8ijMyz2IHXVrkrj3rDV8PUJbkNAGLUn9kW1NffXLbGl9FU7J0L7Iqb-6Ecl88fq-HBar; SUBP=0033WrSXqPxfM725Ws9jqgMF55529P9D9WhuGqs2PYQhXTjPjrjDRdMk5JpX5o275NHD95QNSKq7S0zceh5pWs4DqcjMi--NiK.Xi-2Ri--ciKnRi-zNS0-cehMESo57eBtt; WBPSESS=d-XWAcJ2m95Bmfa1ESu0JOq9aDt83CMnNFDmbjCSj5MdAscFqXebj4Yc0wWr9nx0YITY-Fnl9eCTK3iXnnXfy4ZRxM6hPnI_f_eBPBuFnnSJO3Fii21XW7Ei6dMzhDvGjUrkDlpRfJ5NbvBmat55gg==; UOR=,,tophub.today",
+            'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36',
+        }
+        for url in self.start_urls:
+            r = requests.get(url, headers=headers,allow_redirects=False)
+            if r.status_code == 200:
+                yield scrapy.Request(url, callback=self.parse, dont_filter=True)
+            else:
+                print(f"r.headers = {r.headers['Location']}")
+                yield scrapy.Request(r.headers['Location'], callback=self.parse, dont_filter=True)
     def parse(self, response):
         Topic_urls =[]
         Topics = []

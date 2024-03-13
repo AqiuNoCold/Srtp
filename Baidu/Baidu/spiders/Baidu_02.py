@@ -1,3 +1,4 @@
+import requests
 import scrapy
 from ..items import BaiduItem
 import time
@@ -7,6 +8,9 @@ class ZixunSpider(scrapy.Spider):
     start_urls = []
 
     def start_requests(self):
+        headers = {
+            'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36'
+        }
         with open("test.json", "r", encoding="utf-8") as f:
             dicts = json.load(f)
             for dic in dicts:
@@ -15,7 +19,12 @@ class ZixunSpider(scrapy.Spider):
                 item["Baidu_Url"] = dic["Baidu_Url"]
                 item['Abstract']=dic['Abstract']
                 item['Author']=dic['Author']
-                yield scrapy.Request(url=item['Baidu_Url'], callback=self.parse, meta={'item':item})
+                r = requests.get(url=item['Baidu_Url'], headers=headers,allow_redirects=False)
+                if r.status_code == 200:
+                    yield scrapy.Request(url=item['Baidu_Url'], callback=self.parse, meta={'item':item},dont_filter=True)
+                else:
+                    print(f"r.headers == {r.headers['Location']}")
+                    yield scrapy.Request(url=r.headers['Location'], callback=self.parse, meta={'item':item},dont_filter=True)
     def parse(self, response):
         item = response.meta['item']
         abstract = item["Abstract"][4:10]
@@ -27,13 +36,11 @@ class ZixunSpider(scrapy.Spider):
             else:
                 text = text + com[0]
         item["Comment"] = text
-        print("item输出")
-        print(item["Comment"])
         if item["Comment"] != "":
             yield item
-        else:
-            print("重新加载请求")
-            yield scrapy.Request(url=item["Baidu_Url"], callback=self.Retry_parse, meta={'item':item,'retry_time':0},dont_filter=True)
+        # else:
+        #     print("重新加载请求")
+        #     yield scrapy.Request(url=item["Baidu_Url"], callback=self.Retry_parse, meta={'item':item,'retry_time':0},dont_filter=True)
 
     def Retry_parse(self, response):
         print("成功调用")
@@ -41,7 +48,7 @@ class ZixunSpider(scrapy.Spider):
         retry_time = response.meta['retry_time']+1
         if item["Comment"] == "":
             if retry_time>3:
-                item['Comment'] = "实在抓不下来"
+                item['Comment'] = f"RetryTimes{retry_time}"
                 yield item
             else:
                 print(f"Retry time: {retry_time}")

@@ -2,10 +2,22 @@ import scrapy
 import re
 import time
 from scrapy.crawler import CrawlerProcess
+import requests
 from ..items import BaiduItem
 class BaiduSpider(scrapy.Spider):
     name = "Baidu_01"
     start_urls = ["https://top.baidu.com/board?tab=realtime"]
+    def start_requests(self):
+        headers = {
+            'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36'
+        }
+        for url in self.start_urls:
+            r = requests.get(url, headers=headers,allow_redirects=False)
+            if r.status_code == 200:
+                yield scrapy.Request(url, callback=self.parse, dont_filter=True)
+            else:
+                print(f"r.headers = {r.headers['Location']}")
+                yield scrapy.Request(r.headers['Location'], callback=self.parse, dont_filter=True)
 
     def parse(self, response):
         Topics = []
