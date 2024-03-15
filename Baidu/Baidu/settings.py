@@ -45,7 +45,7 @@ DEFAULT_REQUEST_HEADERS = {
 SPIDER_MIDDLEWARES = {
    "Baidu.middlewares.BaiduSpiderMiddleware": 543,
 }
-
+LOG_LEVEL = 'ERROR'
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #DOWNLOADER_MIDDLEWARES = {

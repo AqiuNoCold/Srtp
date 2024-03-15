@@ -30,17 +30,19 @@ class BaiduSpider(scrapy.Spider):
             #print(searched_url)
             #print(topic)
             item=BaiduItem()
-            item['Baidu_Topic']=topic
+            item['Origin']='Baidu'
+            item['Topic']=topic
             yield scrapy.Request(url=searched_url, callback=self.parse_urls,meta={'item':item})
 
     def parse_urls(self,response):
-        print(f"Success enter {response.meta['item']['Baidu_Topic']}")
+        print(f"Success enter {response.meta['item']['Topic']}")
         item=response.meta['item']
         for each in response.xpath("//div[@srcid='200']"):
             detailed_url=each.xpath("./div/h3/a/@href")[0].extract()#各个搜索结果的URL
-            item['Baidu_Url']=detailed_url
+            item['Url']=detailed_url
             item['Abstract']=each.xpath("./div/div/div/span[2]/@aria-label")[0].extract()
             item["Author"]=each.xpath("./div/div/div/div/a/span/text()")[0].extract()
+            item['Comment']=''
             yield item
             # yield scrapy.Request(url=detailed_url, callback=self.parse_detail,meta={'item':item})
 

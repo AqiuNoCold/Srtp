@@ -43,6 +43,7 @@ class WeiboSpider(scrapy.Spider):
                 #print("Prepared")
                 item = WeibospiderItem()
                 item['Comment']=''
+                item['Origin'] = 'Weibo'
                 yield scrapy.Request(url=full_topic_url, callback=self.parse_topic,meta={'item':item})
 
         #scrapy crawl Weibo
@@ -53,7 +54,7 @@ class WeiboSpider(scrapy.Spider):
         for each in response.xpath("//div[@action-type='feed_list_item'][@class='card-wrap']"):
 
             #print("Entered")
-            Name=each.xpath("div//a[@class='name']/text()")[0].extract()
+            Author=each.xpath("div//a[@class='name']/text()")[0].extract()
             #print(Name)
             Text=each.xpath("div[2]/div[1]/div[2]/p[2]//text()").getall()
             #div[2] / div[1] / div[2] / p[1]
@@ -74,7 +75,7 @@ class WeiboSpider(scrapy.Spider):
                 #Name=each.xpath("div[2]/div[1]/div[2]/p/@nick-name").get()
                 item = response.meta['item']
                 item['Topic'] = Topic
-                item['Name'] = Name
+                item['Author'] = Author
                 item['Comment'] = Comment
                 #print(item)
                 yield item
