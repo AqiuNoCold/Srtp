@@ -1,0 +1,95 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'plugins/bootstrap-5.3.3-dist/css/bootstrap.min.css' %}">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+        <img alt="Logo" width="50" height="50" class="d-inline-block align-text-top" src = {% static "img/logo.png" %}>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/">Home</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Dropdown
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/show/data">Datasets</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+                  <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/login">Login</a>
+        </li>
+      </ul>
+      <form class="d-flex" role="search" action="/search" method="post">
+          {% csrf_token %}
+        <input class="form-control me-2" type="text" placeholder="Search" aria-label="Search" name="text">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+<table class = 'table table-hover align-middle'>
+    <thead class="table-dark">
+        <tr>
+            <th style="text-align: center">id</th>
+            <th style="text-align: center">topic</th>
+            <th style="text-align: center">origin</th>
+            <th style="text-align: center">author</th>
+            <th style="text-align: center">abstract</th>
+            <th style="text-align: center">url</th>
+            <th style="text-align: center">analysis</th>
+            <th style="text-align: center">delete</th>
+        </tr>
+    </thead>
+    <thead>
+    <tbody class="table-group-divider">
+    {% for obj in objs %}
+        <tr>
+            <td style="text-align: center">{{ obj.id }}</td>
+            <td>{{ obj.topic }}</td>
+            <td style="text-align: center">{{ obj.origin }}</td>
+            <td style="text-align: center">{{ obj.author }}</td>
+            <td>{{ obj.abstract }}</td>
+            <td>
+                <a href="{{ obj.url }}">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-arrow-right-circle" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5z"/>
+                </svg>
+                </a>
+            </td>
+            <td style="text-align: center">
+                <a href="/analysis/{{ obj.topic }}">
+                    analysis
+                </a>
+            </td>
+            <td style="text-align: center">
+                <a href="/delete/{{ obj.id }}">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-file-earmark-x" viewBox="0 0 16 16">
+                        <path d="M6.854 7.146a.5.5 0 1 0-.708.708L7.293 9l-1.147 1.146a.5.5 0 0 0 .708.708L8 9.707l1.146 1.147a.5.5 0 0 0 .708-.708L8.707 9l1.147-1.146a.5.5 0 0 0-.708-.708L8 8.293z"/>
+                        <path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2M9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5z"/>
+                    </svg>
+                </a>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+<script src="{% static 'plugins/bootstrap-5.3.3-dist/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'plugins/bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js' %}"></script>
+</body>
+</html>

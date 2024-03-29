@@ -3,16 +3,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Search</title>
     <link rel="stylesheet" href="{% static 'plugins/bootstrap-5.3.3-dist/css/bootstrap.min.css' %}">
-    <style>
-      body,html {
-        height: 100%;
-      }
-      .container-fluid {
-        min-height: 100%;
-      }
-    </style>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
@@ -46,40 +38,15 @@
       <form class="d-flex" role="search" action="/search" method="post">
           {% csrf_token %}
         <input class="form-control me-2" type="text" placeholder="Search" aria-label="Search" name="text">
-          <button class="btn btn-outline-success" type="submit">Search</button>
+        <button class="btn btn-outline-success" type="submit">Search</button>
       </form>
     </div>
   </div>
 </nav>
-{#<form action="/login" method="post">#}
-{#    {% csrf_token %}#}
-{#    <input type="text" name="username" placeholder="用户名"><br>#}
-{#    <input type="password" name="password" placeholder="密码"><br>#}
-{#    <input type="submit" value="登录">#}
-{#</form>#}
-<main class="d-flex align-items-center py-6 justify-content-center" style="height: 80%">
-  <form action="/login" method="post" style="width: 30%">
-      {% csrf_token %}
-    <h1 class="h3 mb-3 fw-normal"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">请登录</font></font></h1>
-    <div class="form-floating">
-        <input type="email" class="form-control" name="email" placeholder="姓名@example.com">
-        <label for="floatingInput"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">电子邮件地址</font></font></label>
-    </div>
-    <div class="form-floating">
-        <input type="password" class="form-control" name="password" placeholder="密码">
-        <label for="floatingPassword"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">密码</font></font></label>
-    </div>
-
-    <div class="form-check text-start my-3">
-      <input class="form-check-input" type="checkbox" value="remember-me" id="flexCheckDefault">
-      <label class="form-check-label" for="flexCheckDefault"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
-        记住账号
-      </font></font></label>
-    </div>
-    <button class="btn btn-primary w-100 py-2" type="submit"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">登入</font></font></button>
-    <p class="mt-5 mb-3 text-body-secondary"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">© 2017–2024</font></font></p>
-  </form>
-</main>
+{% for obj in objs %}
+    <p>{{ obj.topic }}</p>
+    <p>{{ obj.id }}</p>
+{% endfor %}
 <script src="{% static 'plugins/bootstrap-5.3.3-dist/js/bootstrap.min.js' %}"></script>
 <script src="{% static 'plugins/bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js' %}"></script>
 </body>

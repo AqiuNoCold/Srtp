@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/Baidu.iml" filepath="$PROJECT_DIR$/.idea/Baidu.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/srtp.iml" filepath="$PROJECT_DIR$/.idea/srtp.iml" />
     </modules>
   </component>
 </project>
