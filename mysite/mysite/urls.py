@@ -22,6 +22,7 @@ urlpatterns = [
     path('login',views.login),
     path('analysis/<topic>',views.analysis),
     path('delete/<id>',views.delete),
-    path('search',views.search)
+    path('search',views.search),
+    path('analysis/<topic>/<author>',views.author)
 ]
 

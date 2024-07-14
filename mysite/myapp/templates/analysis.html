@@ -43,53 +43,78 @@
     </div>
   </div>
 </nav>
-<table class = 'table table-hover align-middle'>
-    <thead class="table-dark">
-        <tr>
-            <th style="text-align: center">id</th>
-            <th style="text-align: center">topic</th>
-            <th style="text-align: center">origin</th>
-            <th style="text-align: center">author</th>
-            <th style="text-align: center">abstract</th>
-            <th style="text-align: center">url</th>
-            <th style="text-align: center">analysis</th>
-            <th style="text-align: center">delete</th>
-        </tr>
-    </thead>
-    <thead>
-    <tbody class="table-group-divider">
+{#<table class = 'table table-hover align-middle'>#}
+{#    <thead class="table-dark">#}
+{#        <tr>#}
+{#            <th style="text-align: center">id</th>#}
+{#            <th style="text-align: center">topic</th>#}
+{#            <th style="text-align: center">origin</th>#}
+{#            <th style="text-align: center">author</th>#}
+{#            <th style="text-align: center">abstract</th>#}
+{#            <th style="text-align: center">url</th>#}
+{#            <th style="text-align: center">analysis</th>#}
+{#            <th style="text-align: center">delete</th>#}
+{#        </tr>#}
+{#    </thead>#}
+{#    <thead>#}
+{#    <tbody class="table-group-divider">#}
+{#    {% for obj in objs %}#}
+{#        <tr>#}
+{#            <td style="text-align: center">{{ obj.id }}</td>#}
+{#            <td>{{ obj.topic }}</td>#}
+{#            <td style="text-align: center">{{ obj.origin }}</td>#}
+{#            <td style="text-align: center">{{ obj.author }}</td>#}
+{#            <td>{{ obj.abstract }}</td>#}
+{#            <td>#}
+{#                <a href="{{ obj.url }}">#}
+{#                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-arrow-right-circle" viewBox="0 0 16 16">#}
+{#                    <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5z"/>#}
+{#                </svg>#}
+{#                </a>#}
+{#            </td>#}
+{#            <td style="text-align: center">#}
+{#                <a href="/analysis/{{ obj.topic }}">#}
+{#                    analysis#}
+{#                </a>#}
+{#            </td>#}
+{#            <td style="text-align: center">#}
+{#                <a href="/delete/{{ obj.id }}">#}
+{#                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-file-earmark-x" viewBox="0 0 16 16">#}
+{#                        <path d="M6.854 7.146a.5.5 0 1 0-.708.708L7.293 9l-1.147 1.146a.5.5 0 0 0 .708.708L8 9.707l1.146 1.147a.5.5 0 0 0 .708-.708L8.707 9l1.147-1.146a.5.5 0 0 0-.708-.708L8 8.293z"/>#}
+{#                        <path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2M9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5z"/>#}
+{#                    </svg>#}
+{#                </a>#}
+{#            </td>#}
+{#        </tr>#}
+{#    {% endfor %}#}
+{#    </tbody>#}
+{#</table>#}
+<div style="display: flex;align-items: center;justify-content: center;height: 600px" >
+    <div id = "loading" class="spinner-border" style="width: 3rem; height: 3rem;" role="status">
+    <span class="visually-hidden">Loading...</span>
+</div>
+    {{ chart|safe }}
+</div>
+<div style="display: flex;flex-wrap: wrap;justify-content: center;align-items: center;gap: 20px">
     {% for obj in objs %}
-        <tr>
-            <td style="text-align: center">{{ obj.id }}</td>
-            <td>{{ obj.topic }}</td>
-            <td style="text-align: center">{{ obj.origin }}</td>
-            <td style="text-align: center">{{ obj.author }}</td>
-            <td>{{ obj.abstract }}</td>
-            <td>
-                <a href="{{ obj.url }}">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-arrow-right-circle" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5z"/>
-                </svg>
-                </a>
-            </td>
-            <td style="text-align: center">
-                <a href="/analysis/{{ obj.topic }}">
-                    analysis
-                </a>
-            </td>
-            <td style="text-align: center">
-                <a href="/delete/{{ obj.id }}">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-file-earmark-x" viewBox="0 0 16 16">
-                        <path d="M6.854 7.146a.5.5 0 1 0-.708.708L7.293 9l-1.147 1.146a.5.5 0 0 0 .708.708L8 9.707l1.146 1.147a.5.5 0 0 0 .708-.708L8.707 9l1.147-1.146a.5.5 0 0 0-.708-.708L8 8.293z"/>
-                        <path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2M9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5z"/>
-                    </svg>
-                </a>
-            </td>
-        </tr>
+    <div class="card" style="width: 18rem; height: 25rem">
+    <a href="/analysis/{{ obj.topic }}/{{ obj.author }}">
+    <img class="card-img-top" alt="暂无图片" src={% static "..." %}>
+    </a>
+  <div class="card-body" style="height: 90%">
+    <h5 class="card-title">{{ obj.author }}</h5>
+    <p class="card-text">{{ obj.abstract }}</p>
+    <a href="{{obj.url}}" class="btn btn-primary">点击查看原文</a>
+  </div>
+    </div>
     {% endfor %}
-    </tbody>
-</table>
+</div>
 <script src="{% static 'plugins/bootstrap-5.3.3-dist/js/bootstrap.min.js' %}"></script>
 <script src="{% static 'plugins/bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js' %}"></script>
+<script>
+window.onload = function() {
+    document.getElementById('loading').style.display = 'none';
+}
+</script>
 </body>
 </html>

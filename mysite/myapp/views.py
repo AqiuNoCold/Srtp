@@ -2,17 +2,11 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from myapp.models import SpiderDb
 from django.shortcuts import redirect
-from pyecharts.charts import Bar
+from pyecharts.charts import Bar,Pie
+from pyecharts import options as opts
 # Create your views here.
 def show_data(request):
     objs = SpiderDb.objects.all()
-    # name = "Wan"
-    # roles = ["Admin","User","Guest"]
-    # user_info = {"name":"YiHan","age":24,"gender":"Male"}
-    # 可以直接选择抓包获取数据！！！
-    # import requests
-    # r = requests.get('https://jsonplaceholder.typicode.com/posts/1')
-    # return redirect("https://www.baidu.com")
     return render(request,'show_data.html',{"objs":objs})
 
 def login(request):
@@ -32,7 +26,17 @@ def analysis(request,topic):
     objs = SpiderDb.objects.filter(topic=topic).all()
     if not objs:
         return (redirect("/"))
-    return render(request,'analysis.html',{"objs":objs})
+    else:
+        bar = Bar()
+        bar.add_xaxis([obj.author for obj in objs])
+        bar.add_yaxis("正面", [round(obj.positive,2) for obj in objs])
+        bar.add_yaxis("中性", [round(obj.neutral,2) for obj in objs])
+        bar.add_yaxis("负面", [round(obj.negative,2) for obj in objs])
+        bar.set_global_opts(title_opts=opts.TitleOpts(title="舆情分析")
+                            ,yaxis_opts=opts.AxisOpts(name="情感趋势")
+                            ,xaxis_opts=opts.AxisOpts(name="媒体"))
+        chart = bar.render_embed()
+        return render(request,'analysis.html',{"objs":objs,"chart":chart})
 
 def delete(request,id):
     SpiderDb.objects.filter(id=id).delete()
@@ -47,3 +51,19 @@ def search(request):
         else:
             return render(request,'search.html',{"objs":objs})
 
+def author(request,topic,author):
+    objs = SpiderDb.objects.filter(topic=topic,author=author).all()
+    if not objs:
+        return redirect("/")
+    else:
+        pie = Pie()
+        charts = []
+        for obj in objs:
+            pie.add("",[("积极",obj.positive),("中立",obj.neutral),("消极",obj.negative)],radius=[80,150])
+            pie.set_global_opts(title_opts=opts.TitleOpts(title=obj.author,
+                                                          pos_left="center",
+                                                          pos_bottom="center"),
+                                legend_opts=opts.LegendOpts(pos_left="left",
+                                                            orient="vertical"))
+            charts.append(pie.render_embed())
+        return render(request,'author.html',{"objs":objs,"charts":charts})

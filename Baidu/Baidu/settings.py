@@ -37,15 +37,15 @@ COOKIES_ENABLED = False
 
 # Override the default request headers:
 DEFAULT_REQUEST_HEADERS = {
-    "Cookie":"SINAGLOBAL=802098472984.5715.1697621151360; _s_tentry=passport.weibo.com; Apache=7217574065072.632.1708774393705; ULV=1708774393716:5:1:1:7217574065072.632.1708774393705:1700046431628; XSRF-TOKEN=q90O1pJU6deXYnXkmzWhvAiN; PC_TOKEN=af130cdd6c; appkey=; WBtopGlobal_register_version=2024022419; ALF=1711366767; SUB=_2A25I3aU_DeRhGeFL7VIW8ijMyz2IHXVrkrj3rDV8PUJbkNAGLUn9kW1NffXLbGl9FU7J0L7Iqb-6Ecl88fq-HBar; SUBP=0033WrSXqPxfM725Ws9jqgMF55529P9D9WhuGqs2PYQhXTjPjrjDRdMk5JpX5o275NHD95QNSKq7S0zceh5pWs4DqcjMi--NiK.Xi-2Ri--ciKnRi-zNS0-cehMESo57eBtt; WBPSESS=d-XWAcJ2m95Bmfa1ESu0JOq9aDt83CMnNFDmbjCSj5MdAscFqXebj4Yc0wWr9nx0YITY-Fnl9eCTK3iXnnXfy4ZRxM6hPnI_f_eBPBuFnnSJO3Fii21XW7Ei6dMzhDvGjUrkDlpRfJ5NbvBmat55gg==; UOR=,,tophub.today",
-    "User-Agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+     "Cookie": "SINAGLOBAL=802098472984.5715.1697621151360; UOR=,,tophub.today; ALF=1714024825; SUB=_2AkMRSZu8f8NxqwFRmfoTyGnhb4l_zADEieKnFWpnJRMxHRl-yT9kqmZbtRB6Osm1U1gC_14g9vQB28JneYc7myCM5gxA; SUBP=0033WrSXqPxfM72-Ws9jqgMF55529P9D9WWu64-iny6mUVVVib2VQp1H; _s_tentry=passport.weibo.com; Apache=9115422418379.955.1712657549225; ULV=1712657549283:7:1:1:9115422418379.955.1712657549225:1710303190297; XSRF-TOKEN=tUva6TrKCY7xKHRg66QJSFTe; WBPSESS=V0zdZ7jH8_6F0CA8c_ussUNHjWHvGI6ggyrtP0cGSl5r66MUKWJlOwBdLGX9SeJKGtzgo3S08T7UESiNOISmlz4ydTeenR06DeYjA1AVq92e4cE2LuO1Tocbo-4JevQm",
+        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36',
 }
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 SPIDER_MIDDLEWARES = {
    "Baidu.middlewares.BaiduSpiderMiddleware": 543,
 }
-# LOG_LEVEL = 'ERROR'
+LOG_LEVEL = 'ERROR'
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #DOWNLOADER_MIDDLEWARES = {

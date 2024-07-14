@@ -1,0 +1,90 @@
+----srtp\
+    |----.DS_Store
+    |----Baidu\
+    |    |----.DS_Store
+    |    |----Baidu\
+    |    |    |----.DS_Store
+    |    |    |----spiders\
+    |    |    |    |----.DS_Store
+    |    |    |    |----Baidu_01.py
+    |    |    |    |----WeiboSpider.py
+    |    |    |    |----test.json
+    |    |    |    |----strat_project.py
+    |    |    |    |----__pycache__\
+    |    |    |    |----Baidu_02.py
+    |    |    |----__init__.py
+    |    |    |----__pycache__\
+    |    |    |----middlewares.py
+    |    |    |----settings.py
+    |    |    |----items.py
+    |    |    |----pipelines.py
+    |    |----scrapy.cfg
+    |----mysite\
+    |    |----.DS_Store
+    |    |----mysite\
+    |    |    |----asgi.py
+    |    |    |----__init__.py
+    |    |    |----__pycache__\
+    |    |    |----settings.py
+    |    |    |----urls.py
+    |    |    |----wsgi.py
+    |    |----analysis.html
+    |    |----db.sqlite3
+    |    |----__pycache__\
+    |    |----myapp\
+    |    |    |----migrations\
+    |    |    |    |----__init__.py
+    |    |    |    |----__pycache__\
+    |    |    |    |    |----0001_initial.cpython-311.pyc
+    |    |    |    |    |----0002_spiderdb_negative_spiderdb_neutral_spiderdb_positive.cpython-311.pyc
+    |    |    |    |    |----__init__.cpython-311.pyc
+    |    |    |    |----0002_spiderdb_negative_spiderdb_neutral_spiderdb_positive.py
+    |    |    |    |----0001_initial.py
+    |    |    |----models.py
+    |    |    |----__init__.py
+    |    |    |----__pycache__\
+    |    |    |    |----views.cpython-311.pyc
+    |    |    |    |----models.cpython-311.pyc
+    |    |    |    |----admin.cpython-311.pyc
+    |    |    |    |----apps.cpython-311.pyc
+    |    |    |    |----__init__.cpython-311.pyc
+    |    |    |----apps.py
+    |    |    |----admin.py
+    |    |    |----static\
+    |    |    |    |----css\
+    |    |    |    |----plugins\
+    |    |    |    |    |----bootstrap-5.3.3-dist\
+    |    |    |    |----js\
+    |    |    |    |----img\
+    |    |    |    |    |----logo.png
+    |    |    |----templates\
+    |    |    |    |----home.html
+    |    |    |    |----analysis.html
+    |    |    |    |----login.html
+    |    |    |    |----author.html
+    |    |    |    |----search.html
+    |    |    |    |----show_data.html
+    |    |    |----tests.py
+    |    |    |----views.py
+    |    |----manage.py
+    |----README.md
+    |----bert\
+    |    |----test.json
+    |    |----test.py
+    |    |----my_test_result.csv
+    |    |----bertapi.py
+    |    |----emotion.py
+    |    |----accuracy.py
+    |    |----bert-base-chinese\
+    |    |    |----model.safetensors
+    |    |    |----tokenizer_config.json
+    |    |    |----gitattributes
+    |    |    |----config.json
+    |    |    |----README.md
+    |    |    |----vocab.txt
+    |    |    |----pytorch_model.bin
+    |    |    |----tf_model.h5
+    |    |    |----flax_model.msgpack
+    |    |----bert_cla.ckpt
+    |----.git\
+    |----tree_generate.py

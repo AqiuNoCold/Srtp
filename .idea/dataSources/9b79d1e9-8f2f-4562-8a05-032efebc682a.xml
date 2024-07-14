@@ -1,20 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dataSource name="spider@localhost">
+<dataSource name="Ali Cloud">
   <database-model serializer="dbm" dbms="MYSQL" family-id="MYSQL" format-version="4.51">
     <root id="1">
-      <DefaultCasing>mixed/mixed</DefaultCasing>
+      <DefaultCasing>lower/lower</DefaultCasing>
       <DefaultEngine>InnoDB</DefaultEngine>
       <DefaultTmpEngine>InnoDB</DefaultTmpEngine>
       <Grants>|root||root|localhost|ALTER|G
 |root||root|localhost|ALTER ROUTINE|G
 |root||root|localhost|APPLICATION_PASSWORD_ADMIN|G
-|root||mysql.infoschema|localhost|AUDIT_ABORT_EXEMPT|G
-|root||mysql.session|localhost|AUDIT_ABORT_EXEMPT|G
-|root||mysql.sys|localhost|AUDIT_ABORT_EXEMPT|G
-|root||root|localhost|AUDIT_ABORT_EXEMPT|G
 |root||root|localhost|AUDIT_ADMIN|G
-|root||mysql.session|localhost|AUTHENTICATION_POLICY_ADMIN|G
-|root||root|localhost|AUTHENTICATION_POLICY_ADMIN|G
 |root||mysql.session|localhost|BACKUP_ADMIN|G
 |root||root|localhost|BACKUP_ADMIN|G
 |root||root|localhost|BINLOG_ADMIN|G
@@ -37,22 +31,16 @@
 |root||root|localhost|EVENT|G
 |root||root|localhost|EXECUTE|G
 |root||root|localhost|FILE|G
-|root||mysql.infoschema|localhost|FIREWALL_EXEMPT|G
-|root||mysql.session|localhost|FIREWALL_EXEMPT|G
-|root||mysql.sys|localhost|FIREWALL_EXEMPT|G
-|root||root|localhost|FIREWALL_EXEMPT|G
 |root||root|localhost|FLUSH_OPTIMIZER_COSTS|G
 |root||root|localhost|FLUSH_STATUS|G
 |root||root|localhost|FLUSH_TABLES|G
 |root||root|localhost|FLUSH_USER_RESOURCES|G
 |root||root|localhost|GROUP_REPLICATION_ADMIN|G
-|root||root|localhost|GROUP_REPLICATION_STREAM|G
 |root||root|localhost|INDEX|G
 |root||root|localhost|INNODB_REDO_LOG_ARCHIVE|G
 |root||root|localhost|INNODB_REDO_LOG_ENABLE|G
 |root||root|localhost|INSERT|G
 |root||root|localhost|LOCK TABLES|G
-|root||root|localhost|PASSWORDLESS_USER_ADMIN|G
 |root||mysql.session|localhost|PERSIST_RO_VARIABLES_ADMIN|G
 |root||root|localhost|PERSIST_RO_VARIABLES_ADMIN|G
 |root||root|localhost|PROCESS|G
@@ -67,7 +55,6 @@
 |root||root|localhost|ROLE_ADMIN|G
 |root||mysql.infoschema|localhost|SELECT|G
 |root||root|localhost|SELECT|G
-|root||root|localhost|SENSITIVE_VARIABLES_OBSERVER|G
 |root||root|localhost|SERVICE_CONNECTION_ADMIN|G
 |root||mysql.session|localhost|SESSION_VARIABLES_ADMIN|G
 |root||root|localhost|SESSION_VARIABLES_ADMIN|G
@@ -86,14 +73,49 @@
 |root||mysql.session|localhost|SYSTEM_VARIABLES_ADMIN|G
 |root||root|localhost|SYSTEM_VARIABLES_ADMIN|G
 |root||root|localhost|TABLE_ENCRYPTION_ADMIN|G
-|root||root|localhost|TELEMETRY_LOG_ADMIN|G
 |root||root|localhost|TRIGGER|G
 |root||root|localhost|UPDATE|G
 |root||root|localhost|XA_RECOVER_ADMIN|G
 |root||root|localhost|grant option|G
+aqiunocold|schema||AqiuNoCold||ALTER|G
+aqiunocold|schema||AqiuNoCold|localhost|ALTER|G
+aqiunocold|schema||AqiuNoCold||ALTER ROUTINE|G
+aqiunocold|schema||AqiuNoCold|localhost|ALTER ROUTINE|G
+aqiunocold|schema||AqiuNoCold||CREATE|G
+aqiunocold|schema||AqiuNoCold|localhost|CREATE|G
+aqiunocold|schema||AqiuNoCold||CREATE ROUTINE|G
+aqiunocold|schema||AqiuNoCold|localhost|CREATE ROUTINE|G
+aqiunocold|schema||AqiuNoCold||CREATE TEMPORARY TABLES|G
+aqiunocold|schema||AqiuNoCold|localhost|CREATE TEMPORARY TABLES|G
+aqiunocold|schema||AqiuNoCold||CREATE VIEW|G
+aqiunocold|schema||AqiuNoCold|localhost|CREATE VIEW|G
+aqiunocold|schema||AqiuNoCold||DELETE|G
+aqiunocold|schema||AqiuNoCold|localhost|DELETE|G
+aqiunocold|schema||AqiuNoCold||DROP|G
+aqiunocold|schema||AqiuNoCold|localhost|DROP|G
+aqiunocold|schema||AqiuNoCold||EVENT|G
+aqiunocold|schema||AqiuNoCold|localhost|EVENT|G
+aqiunocold|schema||AqiuNoCold||EXECUTE|G
+aqiunocold|schema||AqiuNoCold|localhost|EXECUTE|G
+aqiunocold|schema||AqiuNoCold||INDEX|G
+aqiunocold|schema||AqiuNoCold|localhost|INDEX|G
+aqiunocold|schema||AqiuNoCold||INSERT|G
+aqiunocold|schema||AqiuNoCold|localhost|INSERT|G
+aqiunocold|schema||AqiuNoCold||LOCK TABLES|G
+aqiunocold|schema||AqiuNoCold|localhost|LOCK TABLES|G
+aqiunocold|schema||AqiuNoCold||REFERENCES|G
+aqiunocold|schema||AqiuNoCold|localhost|REFERENCES|G
+aqiunocold|schema||AqiuNoCold||SELECT|G
+aqiunocold|schema||AqiuNoCold|localhost|SELECT|G
+aqiunocold|schema||AqiuNoCold||SHOW VIEW|G
+aqiunocold|schema||AqiuNoCold|localhost|SHOW VIEW|G
+aqiunocold|schema||AqiuNoCold||TRIGGER|G
+aqiunocold|schema||AqiuNoCold|localhost|TRIGGER|G
+aqiunocold|schema||AqiuNoCold||UPDATE|G
+aqiunocold|schema||AqiuNoCold|localhost|UPDATE|G
 performance_schema|schema||mysql.session|localhost|SELECT|G
 sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
-      <ServerVersion>8.0.36</ServerVersion>
+      <ServerVersion>8.0.24</ServerVersion>
     </root>
     <collation id="2" parent="1" name="armscii8_general_ci">
       <Charset>armscii8</Charset>
@@ -641,90 +663,90 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     <collation id="170" parent="1" name="utf32_vietnamese_ci">
       <Charset>utf32</Charset>
     </collation>
-    <collation id="171" parent="1" name="utf8mb3_general_ci">
-      <Charset>utf8mb3</Charset>
+    <collation id="171" parent="1" name="utf8_general_ci">
+      <Charset>utf8</Charset>
       <DefaultForCharset>1</DefaultForCharset>
     </collation>
-    <collation id="172" parent="1" name="utf8mb3_tolower_ci">
-      <Charset>utf8mb3</Charset>
+    <collation id="172" parent="1" name="utf8_tolower_ci">
+      <Charset>utf8</Charset>
     </collation>
-    <collation id="173" parent="1" name="utf8mb3_bin">
-      <Charset>utf8mb3</Charset>
+    <collation id="173" parent="1" name="utf8_bin">
+      <Charset>utf8</Charset>
     </collation>
-    <collation id="174" parent="1" name="utf8mb3_unicode_ci">
-      <Charset>utf8mb3</Charset>
+    <collation id="174" parent="1" name="utf8_unicode_ci">
+      <Charset>utf8</Charset>
     </collation>
-    <collation id="175" parent="1" name="utf8mb3_icelandic_ci">
-      <Charset>utf8mb3</Charset>
+    <collation id="175" parent="1" name="utf8_icelandic_ci">
+      <Charset>utf8</Charset>
     </collation>
-    <collation id="176" parent="1" name="utf8mb3_latvian_ci">
-      <Charset>utf8mb3</Charset>
+    <collation id="176" parent="1" name="utf8_latvian_ci">
+      <Charset>utf8</Charset>
     </collation>
-    <collation id="177" parent="1" name="utf8mb3_romanian_ci">
-      <Charset>utf8mb3</Charset>
+    <collation id="177" parent="1" name="utf8_romanian_ci">
+      <Charset>utf8</Charset>
     </collation>
-    <collation id="178" parent="1" name="utf8mb3_slovenian_ci">
-      <Charset>utf8mb3</Charset>
+    <collation id="178" parent="1" name="utf8_slovenian_ci">
+      <Charset>utf8</Charset>
     </collation>
-    <collation id="179" parent="1" name="utf8mb3_polish_ci">
-      <Charset>utf8mb3</Charset>
+    <collation id="179" parent="1" name="utf8_polish_ci">
+      <Charset>utf8</Charset>
     </collation>
-    <collation id="180" parent="1" name="utf8mb3_estonian_ci">
-      <Charset>utf8mb3</Charset>
+    <collation id="180" parent="1" name="utf8_estonian_ci">
+      <Charset>utf8</Charset>
     </collation>
-    <collation id="181" parent="1" name="utf8mb3_spanish_ci">
-      <Charset>utf8mb3</Charset>
+    <collation id="181" parent="1" name="utf8_spanish_ci">
+      <Charset>utf8</Charset>
     </collation>
-    <collation id="182" parent="1" name="utf8mb3_swedish_ci">
-      <Charset>utf8mb3</Charset>
+    <collation id="182" parent="1" name="utf8_swedish_ci">
+      <Charset>utf8</Charset>
     </collation>
-    <collation id="183" parent="1" name="utf8mb3_turkish_ci">
-      <Charset>utf8mb3</Charset>
+    <collation id="183" parent="1" name="utf8_turkish_ci">
+      <Charset>utf8</Charset>
     </collation>
-    <collation id="184" parent="1" name="utf8mb3_czech_ci">
-      <Charset>utf8mb3</Charset>
+    <collation id="184" parent="1" name="utf8_czech_ci">
+      <Charset>utf8</Charset>
     </collation>
-    <collation id="185" parent="1" name="utf8mb3_danish_ci">
-      <Charset>utf8mb3</Charset>
+    <collation id="185" parent="1" name="utf8_danish_ci">
+      <Charset>utf8</Charset>
     </collation>
-    <collation id="186" parent="1" name="utf8mb3_lithuanian_ci">
-      <Charset>utf8mb3</Charset>
+    <collation id="186" parent="1" name="utf8_lithuanian_ci">
+      <Charset>utf8</Charset>
     </collation>
-    <collation id="187" parent="1" name="utf8mb3_slovak_ci">
-      <Charset>utf8mb3</Charset>
+    <collation id="187" parent="1" name="utf8_slovak_ci">
+      <Charset>utf8</Charset>
     </collation>
-    <collation id="188" parent="1" name="utf8mb3_spanish2_ci">
-      <Charset>utf8mb3</Charset>
+    <collation id="188" parent="1" name="utf8_spanish2_ci">
+      <Charset>utf8</Charset>
     </collation>
-    <collation id="189" parent="1" name="utf8mb3_roman_ci">
-      <Charset>utf8mb3</Charset>
+    <collation id="189" parent="1" name="utf8_roman_ci">
+      <Charset>utf8</Charset>
     </collation>
-    <collation id="190" parent="1" name="utf8mb3_persian_ci">
-      <Charset>utf8mb3</Charset>
+    <collation id="190" parent="1" name="utf8_persian_ci">
+      <Charset>utf8</Charset>
     </collation>
-    <collation id="191" parent="1" name="utf8mb3_esperanto_ci">
-      <Charset>utf8mb3</Charset>
+    <collation id="191" parent="1" name="utf8_esperanto_ci">
+      <Charset>utf8</Charset>
     </collation>
-    <collation id="192" parent="1" name="utf8mb3_hungarian_ci">
-      <Charset>utf8mb3</Charset>
+    <collation id="192" parent="1" name="utf8_hungarian_ci">
+      <Charset>utf8</Charset>
     </collation>
-    <collation id="193" parent="1" name="utf8mb3_sinhala_ci">
-      <Charset>utf8mb3</Charset>
+    <collation id="193" parent="1" name="utf8_sinhala_ci">
+      <Charset>utf8</Charset>
     </collation>
-    <collation id="194" parent="1" name="utf8mb3_german2_ci">
-      <Charset>utf8mb3</Charset>
+    <collation id="194" parent="1" name="utf8_german2_ci">
+      <Charset>utf8</Charset>
     </collation>
-    <collation id="195" parent="1" name="utf8mb3_croatian_ci">
-      <Charset>utf8mb3</Charset>
+    <collation id="195" parent="1" name="utf8_croatian_ci">
+      <Charset>utf8</Charset>
     </collation>
-    <collation id="196" parent="1" name="utf8mb3_unicode_520_ci">
-      <Charset>utf8mb3</Charset>
+    <collation id="196" parent="1" name="utf8_unicode_520_ci">
+      <Charset>utf8</Charset>
     </collation>
-    <collation id="197" parent="1" name="utf8mb3_vietnamese_ci">
-      <Charset>utf8mb3</Charset>
+    <collation id="197" parent="1" name="utf8_vietnamese_ci">
+      <Charset>utf8</Charset>
     </collation>
-    <collation id="198" parent="1" name="utf8mb3_general_mysql500_ci">
-      <Charset>utf8mb3</Charset>
+    <collation id="198" parent="1" name="utf8_general_mysql500_ci">
+      <Charset>utf8</Charset>
     </collation>
     <collation id="199" parent="1" name="utf8mb4_general_ci">
       <Charset>utf8mb4</Charset>
@@ -952,650 +974,55 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     <collation id="273" parent="1" name="utf8mb4_0900_bin">
       <Charset>utf8mb4</Charset>
     </collation>
-    <collation id="274" parent="1" name="utf8mb4_nb_0900_ai_ci">
-      <Charset>utf8mb4</Charset>
-    </collation>
-    <collation id="275" parent="1" name="utf8mb4_nb_0900_as_cs">
-      <Charset>utf8mb4</Charset>
-    </collation>
-    <collation id="276" parent="1" name="utf8mb4_nn_0900_ai_ci">
-      <Charset>utf8mb4</Charset>
-    </collation>
-    <collation id="277" parent="1" name="utf8mb4_nn_0900_as_cs">
-      <Charset>utf8mb4</Charset>
-    </collation>
-    <collation id="278" parent="1" name="utf8mb4_sr_latn_0900_ai_ci">
-      <Charset>utf8mb4</Charset>
-    </collation>
-    <collation id="279" parent="1" name="utf8mb4_sr_latn_0900_as_cs">
-      <Charset>utf8mb4</Charset>
-    </collation>
-    <collation id="280" parent="1" name="utf8mb4_bs_0900_ai_ci">
-      <Charset>utf8mb4</Charset>
-    </collation>
-    <collation id="281" parent="1" name="utf8mb4_bs_0900_as_cs">
-      <Charset>utf8mb4</Charset>
-    </collation>
-    <collation id="282" parent="1" name="utf8mb4_bg_0900_ai_ci">
-      <Charset>utf8mb4</Charset>
-    </collation>
-    <collation id="283" parent="1" name="utf8mb4_bg_0900_as_cs">
-      <Charset>utf8mb4</Charset>
-    </collation>
-    <collation id="284" parent="1" name="utf8mb4_gl_0900_ai_ci">
-      <Charset>utf8mb4</Charset>
-    </collation>
-    <collation id="285" parent="1" name="utf8mb4_gl_0900_as_cs">
-      <Charset>utf8mb4</Charset>
-    </collation>
-    <collation id="286" parent="1" name="utf8mb4_mn_cyrl_0900_ai_ci">
-      <Charset>utf8mb4</Charset>
-    </collation>
-    <collation id="287" parent="1" name="utf8mb4_mn_cyrl_0900_as_cs">
-      <Charset>utf8mb4</Charset>
-    </collation>
-    <schema id="288" parent="1" name="mysql">
+    <schema id="274" parent="1" name="mysql">
+      <CollationName>utf8mb4_general_ci</CollationName>
+    </schema>
+    <schema id="275" parent="1" name="information_schema">
+      <CollationName>utf8_general_ci</CollationName>
+    </schema>
+    <schema id="276" parent="1" name="performance_schema">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="289" parent="1" name="information_schema">
-      <CollationName>utf8mb3_general_ci</CollationName>
-    </schema>
-    <schema id="290" parent="1" name="performance_schema">
+    <schema id="277" parent="1" name="sys">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="291" parent="1" name="sys">
-      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    <schema id="278" parent="1" name="aqiunocold">
+      <LastIntrospectionLocalTimestamp>2024-03-26.08:29:50</LastIntrospectionLocalTimestamp>
+      <CollationName>utf8mb4_general_ci</CollationName>
     </schema>
-    <schema id="292" parent="1" name="new_schema">
-      <CollationName>utf8mb4_0900_ai_ci</CollationName>
-    </schema>
-    <schema id="293" parent="1" name="spider">
-      <Current>1</Current>
-      <LastIntrospectionLocalTimestamp>2024-03-30.03:28:02</LastIntrospectionLocalTimestamp>
-      <CollationName>utf8mb4_0900_ai_ci</CollationName>
-    </schema>
-    <schema id="294" parent="1" name="mydatabase">
-      <CollationName>utf8mb3_general_ci</CollationName>
-    </schema>
-    <user id="295" parent="1" name="July"/>
-    <user id="296" parent="1" name="Wan"/>
-    <user id="297" parent="1" name="mysql.infoschema">
+    <user id="279" parent="1" name="AqiuNoCold"/>
+    <user id="280" parent="1" name="AqiuNoCold">
+      <Host>localhost</Host>
+    </user>
+    <user id="281" parent="1" name="mysql.infoschema">
       <CanLogin>0</CanLogin>
       <Host>localhost</Host>
       <Plugin>caching_sha2_password</Plugin>
     </user>
-    <user id="298" parent="1" name="mysql.session">
+    <user id="282" parent="1" name="mysql.session">
       <CanLogin>0</CanLogin>
       <Host>localhost</Host>
       <Plugin>caching_sha2_password</Plugin>
     </user>
-    <user id="299" parent="1" name="mysql.sys">
+    <user id="283" parent="1" name="mysql.sys">
       <CanLogin>0</CanLogin>
       <Host>localhost</Host>
       <Plugin>caching_sha2_password</Plugin>
     </user>
-    <user id="300" parent="1" name="root">
+    <user id="284" parent="1" name="root">
       <Host>localhost</Host>
-      <Plugin>caching_sha2_password</Plugin>
     </user>
-    <table id="301" parent="293" name="auth_group">
+    <table id="285" parent="278" name="helloworld">
       <Engine>InnoDB</Engine>
-      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+      <CollationName>utf8mb4_general_ci</CollationName>
     </table>
-    <table id="302" parent="293" name="auth_group_permissions">
-      <Engine>InnoDB</Engine>
-      <CollationName>utf8mb4_0900_ai_ci</CollationName>
-    </table>
-    <table id="303" parent="293" name="auth_permission">
-      <Engine>InnoDB</Engine>
-      <CollationName>utf8mb4_0900_ai_ci</CollationName>
-    </table>
-    <table id="304" parent="293" name="auth_user">
-      <Engine>InnoDB</Engine>
-      <CollationName>utf8mb4_0900_ai_ci</CollationName>
-    </table>
-    <table id="305" parent="293" name="auth_user_groups">
-      <Engine>InnoDB</Engine>
-      <CollationName>utf8mb4_0900_ai_ci</CollationName>
-    </table>
-    <table id="306" parent="293" name="auth_user_user_permissions">
-      <Engine>InnoDB</Engine>
-      <CollationName>utf8mb4_0900_ai_ci</CollationName>
-    </table>
-    <table id="307" parent="293" name="django_admin_log">
-      <Engine>InnoDB</Engine>
-      <CollationName>utf8mb4_0900_ai_ci</CollationName>
-    </table>
-    <table id="308" parent="293" name="django_content_type">
-      <Engine>InnoDB</Engine>
-      <CollationName>utf8mb4_0900_ai_ci</CollationName>
-    </table>
-    <table id="309" parent="293" name="django_migrations">
-      <Engine>InnoDB</Engine>
-      <CollationName>utf8mb4_0900_ai_ci</CollationName>
-    </table>
-    <table id="310" parent="293" name="django_session">
-      <Engine>InnoDB</Engine>
-      <CollationName>utf8mb4_0900_ai_ci</CollationName>
-    </table>
-    <table id="311" parent="293" name="spider_db">
-      <Engine>InnoDB</Engine>
-      <CollationName>utf8mb4_0900_ai_ci</CollationName>
-    </table>
-    <column id="312" parent="301" name="id">
-      <AutoIncrement>1</AutoIncrement>
-      <DasType>int|0s</DasType>
-      <NotNull>1</NotNull>
+    <column id="286" parent="285" name="fruit">
+      <DasType>char(1)|0s</DasType>
       <Position>1</Position>
     </column>
-    <column id="313" parent="301" name="name">
-      <DasType>varchar(150)|0s</DasType>
-      <NotNull>1</NotNull>
+    <column id="287" parent="285" name="apple">
+      <DasType>char(1)|0s</DasType>
       <Position>2</Position>
     </column>
-    <index id="314" parent="301" name="PRIMARY">
-      <ColNames>id</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <index id="315" parent="301" name="name">
-      <ColNames>name</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <key id="316" parent="301" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <Primary>1</Primary>
-      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
-    </key>
-    <key id="317" parent="301" name="name">
-      <UnderlyingIndexName>name</UnderlyingIndexName>
-    </key>
-    <column id="318" parent="302" name="id">
-      <AutoIncrement>1</AutoIncrement>
-      <DasType>bigint|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-    </column>
-    <column id="319" parent="302" name="group_id">
-      <DasType>int|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>2</Position>
-    </column>
-    <column id="320" parent="302" name="permission_id">
-      <DasType>int|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>3</Position>
-    </column>
-    <foreign-key id="321" parent="302" name="auth_group_permissions_group_id_b120cbf9_fk_auth_group_id">
-      <ColNames>group_id</ColNames>
-      <RefColNames>id</RefColNames>
-      <RefTableName>auth_group</RefTableName>
-    </foreign-key>
-    <foreign-key id="322" parent="302" name="auth_group_permissio_permission_id_84c5c92e_fk_auth_perm">
-      <ColNames>permission_id</ColNames>
-      <RefColNames>id</RefColNames>
-      <RefTableName>auth_permission</RefTableName>
-    </foreign-key>
-    <index id="323" parent="302" name="PRIMARY">
-      <ColNames>id</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <index id="324" parent="302" name="auth_group_permissions_group_id_permission_id_0cd325b0_uniq">
-      <ColNames>group_id
-permission_id</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <index id="325" parent="302" name="auth_group_permissio_permission_id_84c5c92e_fk_auth_perm">
-      <ColNames>permission_id</ColNames>
-      <Type>btree</Type>
-    </index>
-    <key id="326" parent="302" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <Primary>1</Primary>
-      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
-    </key>
-    <key id="327" parent="302" name="auth_group_permissions_group_id_permission_id_0cd325b0_uniq">
-      <UnderlyingIndexName>auth_group_permissions_group_id_permission_id_0cd325b0_uniq</UnderlyingIndexName>
-    </key>
-    <column id="328" parent="303" name="id">
-      <AutoIncrement>24</AutoIncrement>
-      <DasType>int|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-    </column>
-    <column id="329" parent="303" name="name">
-      <DasType>varchar(255)|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>2</Position>
-    </column>
-    <column id="330" parent="303" name="content_type_id">
-      <DasType>int|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>3</Position>
-    </column>
-    <column id="331" parent="303" name="codename">
-      <DasType>varchar(100)|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>4</Position>
-    </column>
-    <foreign-key id="332" parent="303" name="auth_permission_content_type_id_2f476e4b_fk_django_co">
-      <ColNames>content_type_id</ColNames>
-      <RefColNames>id</RefColNames>
-      <RefTableName>django_content_type</RefTableName>
-    </foreign-key>
-    <index id="333" parent="303" name="PRIMARY">
-      <ColNames>id</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <index id="334" parent="303" name="auth_permission_content_type_id_codename_01ab375a_uniq">
-      <ColNames>content_type_id
-codename</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <key id="335" parent="303" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <Primary>1</Primary>
-      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
-    </key>
-    <key id="336" parent="303" name="auth_permission_content_type_id_codename_01ab375a_uniq">
-      <UnderlyingIndexName>auth_permission_content_type_id_codename_01ab375a_uniq</UnderlyingIndexName>
-    </key>
-    <column id="337" parent="304" name="id">
-      <AutoIncrement>1</AutoIncrement>
-      <DasType>int|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-    </column>
-    <column id="338" parent="304" name="password">
-      <DasType>varchar(128)|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>2</Position>
-    </column>
-    <column id="339" parent="304" name="last_login">
-      <DasType>datetime(6)|0s</DasType>
-      <Position>3</Position>
-    </column>
-    <column id="340" parent="304" name="is_superuser">
-      <DasType>tinyint(1)|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>4</Position>
-    </column>
-    <column id="341" parent="304" name="username">
-      <DasType>varchar(150)|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>5</Position>
-    </column>
-    <column id="342" parent="304" name="first_name">
-      <DasType>varchar(150)|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>6</Position>
-    </column>
-    <column id="343" parent="304" name="last_name">
-      <DasType>varchar(150)|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>7</Position>
-    </column>
-    <column id="344" parent="304" name="email">
-      <DasType>varchar(254)|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>8</Position>
-    </column>
-    <column id="345" parent="304" name="is_staff">
-      <DasType>tinyint(1)|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>9</Position>
-    </column>
-    <column id="346" parent="304" name="is_active">
-      <DasType>tinyint(1)|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>10</Position>
-    </column>
-    <column id="347" parent="304" name="date_joined">
-      <DasType>datetime(6)|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>11</Position>
-    </column>
-    <index id="348" parent="304" name="PRIMARY">
-      <ColNames>id</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <index id="349" parent="304" name="username">
-      <ColNames>username</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <key id="350" parent="304" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <Primary>1</Primary>
-      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
-    </key>
-    <key id="351" parent="304" name="username">
-      <UnderlyingIndexName>username</UnderlyingIndexName>
-    </key>
-    <column id="352" parent="305" name="id">
-      <AutoIncrement>1</AutoIncrement>
-      <DasType>bigint|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-    </column>
-    <column id="353" parent="305" name="user_id">
-      <DasType>int|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>2</Position>
-    </column>
-    <column id="354" parent="305" name="group_id">
-      <DasType>int|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>3</Position>
-    </column>
-    <foreign-key id="355" parent="305" name="auth_user_groups_user_id_6a12ed8b_fk_auth_user_id">
-      <ColNames>user_id</ColNames>
-      <RefColNames>id</RefColNames>
-      <RefTableName>auth_user</RefTableName>
-    </foreign-key>
-    <foreign-key id="356" parent="305" name="auth_user_groups_group_id_97559544_fk_auth_group_id">
-      <ColNames>group_id</ColNames>
-      <RefColNames>id</RefColNames>
-      <RefTableName>auth_group</RefTableName>
-    </foreign-key>
-    <index id="357" parent="305" name="PRIMARY">
-      <ColNames>id</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <index id="358" parent="305" name="auth_user_groups_user_id_group_id_94350c0c_uniq">
-      <ColNames>user_id
-group_id</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <index id="359" parent="305" name="auth_user_groups_group_id_97559544_fk_auth_group_id">
-      <ColNames>group_id</ColNames>
-      <Type>btree</Type>
-    </index>
-    <key id="360" parent="305" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <Primary>1</Primary>
-      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
-    </key>
-    <key id="361" parent="305" name="auth_user_groups_user_id_group_id_94350c0c_uniq">
-      <UnderlyingIndexName>auth_user_groups_user_id_group_id_94350c0c_uniq</UnderlyingIndexName>
-    </key>
-    <column id="362" parent="306" name="id">
-      <AutoIncrement>1</AutoIncrement>
-      <DasType>bigint|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-    </column>
-    <column id="363" parent="306" name="user_id">
-      <DasType>int|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>2</Position>
-    </column>
-    <column id="364" parent="306" name="permission_id">
-      <DasType>int|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>3</Position>
-    </column>
-    <foreign-key id="365" parent="306" name="auth_user_user_permissions_user_id_a95ead1b_fk_auth_user_id">
-      <ColNames>user_id</ColNames>
-      <RefColNames>id</RefColNames>
-      <RefTableName>auth_user</RefTableName>
-    </foreign-key>
-    <foreign-key id="366" parent="306" name="auth_user_user_permi_permission_id_1fbb5f2c_fk_auth_perm">
-      <ColNames>permission_id</ColNames>
-      <RefColNames>id</RefColNames>
-      <RefTableName>auth_permission</RefTableName>
-    </foreign-key>
-    <index id="367" parent="306" name="PRIMARY">
-      <ColNames>id</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <index id="368" parent="306" name="auth_user_user_permissions_user_id_permission_id_14a6b632_uniq">
-      <ColNames>user_id
-permission_id</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <index id="369" parent="306" name="auth_user_user_permi_permission_id_1fbb5f2c_fk_auth_perm">
-      <ColNames>permission_id</ColNames>
-      <Type>btree</Type>
-    </index>
-    <key id="370" parent="306" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <Primary>1</Primary>
-      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
-    </key>
-    <key id="371" parent="306" name="auth_user_user_permissions_user_id_permission_id_14a6b632_uniq">
-      <UnderlyingIndexName>auth_user_user_permissions_user_id_permission_id_14a6b632_uniq</UnderlyingIndexName>
-    </key>
-    <check id="372" parent="307" name="django_admin_log_chk_1">
-      <NameSurrogate>1</NameSurrogate>
-      <Predicate>`action_flag` &gt;= 0</Predicate>
-    </check>
-    <column id="373" parent="307" name="id">
-      <AutoIncrement>1</AutoIncrement>
-      <DasType>int|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-    </column>
-    <column id="374" parent="307" name="action_time">
-      <DasType>datetime(6)|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>2</Position>
-    </column>
-    <column id="375" parent="307" name="object_id">
-      <DasType>longtext|0s</DasType>
-      <Position>3</Position>
-    </column>
-    <column id="376" parent="307" name="object_repr">
-      <DasType>varchar(200)|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>4</Position>
-    </column>
-    <column id="377" parent="307" name="action_flag">
-      <DasType>smallint unsigned|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>5</Position>
-    </column>
-    <column id="378" parent="307" name="change_message">
-      <DasType>longtext|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>6</Position>
-    </column>
-    <column id="379" parent="307" name="content_type_id">
-      <DasType>int|0s</DasType>
-      <Position>7</Position>
-    </column>
-    <column id="380" parent="307" name="user_id">
-      <DasType>int|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>8</Position>
-    </column>
-    <foreign-key id="381" parent="307" name="django_admin_log_content_type_id_c4bce8eb_fk_django_co">
-      <ColNames>content_type_id</ColNames>
-      <RefColNames>id</RefColNames>
-      <RefTableName>django_content_type</RefTableName>
-    </foreign-key>
-    <foreign-key id="382" parent="307" name="django_admin_log_user_id_c564eba6_fk_auth_user_id">
-      <ColNames>user_id</ColNames>
-      <RefColNames>id</RefColNames>
-      <RefTableName>auth_user</RefTableName>
-    </foreign-key>
-    <index id="383" parent="307" name="PRIMARY">
-      <ColNames>id</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <index id="384" parent="307" name="django_admin_log_content_type_id_c4bce8eb_fk_django_co">
-      <ColNames>content_type_id</ColNames>
-      <Type>btree</Type>
-    </index>
-    <index id="385" parent="307" name="django_admin_log_user_id_c564eba6_fk_auth_user_id">
-      <ColNames>user_id</ColNames>
-      <Type>btree</Type>
-    </index>
-    <key id="386" parent="307" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <Primary>1</Primary>
-      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
-    </key>
-    <column id="387" parent="308" name="id">
-      <AutoIncrement>6</AutoIncrement>
-      <DasType>int|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-    </column>
-    <column id="388" parent="308" name="app_label">
-      <DasType>varchar(100)|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>2</Position>
-    </column>
-    <column id="389" parent="308" name="model">
-      <DasType>varchar(100)|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>3</Position>
-    </column>
-    <index id="390" parent="308" name="PRIMARY">
-      <ColNames>id</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <index id="391" parent="308" name="django_content_type_app_label_model_76bd3d3b_uniq">
-      <ColNames>app_label
-model</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <key id="392" parent="308" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <Primary>1</Primary>
-      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
-    </key>
-    <key id="393" parent="308" name="django_content_type_app_label_model_76bd3d3b_uniq">
-      <UnderlyingIndexName>django_content_type_app_label_model_76bd3d3b_uniq</UnderlyingIndexName>
-    </key>
-    <column id="394" parent="309" name="id">
-      <AutoIncrement>19</AutoIncrement>
-      <DasType>bigint|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-    </column>
-    <column id="395" parent="309" name="app">
-      <DasType>varchar(255)|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>2</Position>
-    </column>
-    <column id="396" parent="309" name="name">
-      <DasType>varchar(255)|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>3</Position>
-    </column>
-    <column id="397" parent="309" name="applied">
-      <DasType>datetime(6)|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>4</Position>
-    </column>
-    <index id="398" parent="309" name="PRIMARY">
-      <ColNames>id</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <key id="399" parent="309" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <Primary>1</Primary>
-      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
-    </key>
-    <column id="400" parent="310" name="session_key">
-      <DasType>varchar(40)|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-    </column>
-    <column id="401" parent="310" name="session_data">
-      <DasType>longtext|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>2</Position>
-    </column>
-    <column id="402" parent="310" name="expire_date">
-      <DasType>datetime(6)|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>3</Position>
-    </column>
-    <index id="403" parent="310" name="PRIMARY">
-      <ColNames>session_key</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <index id="404" parent="310" name="django_session_expire_date_a5c62663">
-      <ColNames>expire_date</ColNames>
-      <Type>btree</Type>
-    </index>
-    <key id="405" parent="310" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <Primary>1</Primary>
-      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
-    </key>
-    <column id="406" parent="311" name="id">
-      <AutoIncrement>518</AutoIncrement>
-      <DasType>int|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-    </column>
-    <column id="407" parent="311" name="Topic">
-      <DasType>varchar(45)|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>2</Position>
-    </column>
-    <column id="408" parent="311" name="Origin">
-      <DasType>varchar(45)|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>3</Position>
-    </column>
-    <column id="409" parent="311" name="Author">
-      <DasType>varchar(45)|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>4</Position>
-    </column>
-    <column id="410" parent="311" name="Abstract">
-      <DasType>varchar(255)|0s</DasType>
-      <Position>5</Position>
-    </column>
-    <column id="411" parent="311" name="Comment">
-      <DasType>varchar(255)|0s</DasType>
-      <Position>6</Position>
-    </column>
-    <column id="412" parent="311" name="Url">
-      <DasType>varchar(255)|0s</DasType>
-      <Position>7</Position>
-    </column>
-    <column id="413" parent="311" name="Negative">
-      <DasType>double|0s</DasType>
-      <Position>8</Position>
-    </column>
-    <column id="414" parent="311" name="Neutral">
-      <DasType>double|0s</DasType>
-      <Position>9</Position>
-    </column>
-    <column id="415" parent="311" name="Positive">
-      <DasType>double|0s</DasType>
-      <Position>10</Position>
-    </column>
-    <index id="416" parent="311" name="PRIMARY">
-      <ColNames>id</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <key id="417" parent="311" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <Primary>1</Primary>
-      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
-    </key>
   </database-model>
 </dataSource>
