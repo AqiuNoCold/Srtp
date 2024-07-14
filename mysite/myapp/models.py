@@ -8,6 +8,9 @@ class SpiderDb(models.Model):
     abstract = models.CharField(db_column='Abstract', max_length=255, blank=True, null=True)  # Field name made lowercase.
     comment = models.CharField(db_column='Comment', max_length=255, blank=True, null=True)  # Field name made lowercase.
     url = models.CharField(db_column='Url', max_length=255, blank=True, null=True)  # Field name made lowercase.
+    positive = models.FloatField(db_column='Positive', blank=True, null=True)
+    neutral = models.FloatField(db_column='Neutral', blank=True, null=True)
+    negative = models.FloatField(db_column='Negative', blank=True, null=True)
 
     class Meta:
         managed = True

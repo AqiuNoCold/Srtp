@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>this is author</title>
+</head>
+<body>
+    <h1>{{ author }}</h1>
+    {% for chart in charts %}
+        {{ chart|safe }}
+    {% endfor %}
+</body>
+</html>
