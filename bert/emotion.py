@@ -72,10 +72,8 @@ if __name__ == '__main__':
     datasets = load_jsondata(df, 150)
     config = BertConfig.from_pretrained('bert-base-chinese')
     config.num_labels = 3
-    model = BertForSequenceClassification.from_pretrained('bert-base-chinese', config=config)
+    model = BertForSequenceClassification.from_pretrained('bert_cla.ckpt', config=config)
     model.cpu()
-    print('开始加载训练完成的model...')
-    model.load_state_dict(torch.load('bert_cla.ckpt', map_location=torch.device('cpu')))
     print('开始测试...')
     model.eval()
     results = []

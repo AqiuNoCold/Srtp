@@ -8,11 +8,7 @@ tokenizer = BertTokenizer.from_pretrained('bert-base-chinese')
 # 加载预训练模型 (weights)
 config = BertConfig.from_pretrained('bert-base-chinese')
 config.num_labels = 3
-model = BertForSequenceClassification.from_pretrained('bert-base-chinese',config=config)
-
-# 加载微调后的模型参数
-model.load_state_dict(torch.load('bert_cla.ckpt',map_location=torch.device('cpu')))
-
+model = BertForSequenceClassification.from_pretrained("bert_cla.ckpt",config=config)
 # 输入文本和实际标签
 input_text = ["你好，世界", "今天天气不错"]
 labels = torch.tensor([0, 1])  # The labels for the two sentences
