@@ -36,4 +36,4 @@ Multimodal representation captures both textual and visual content, enhancing th
 #### 4. Django Framework
 The **Django framework** underpins the system's structure, supporting the efficient organization of data processing, user authentication, and data visualization. Django’s model-template-view (MVT) architecture provides scalability and maintainability, ensuring that the system remains accessible to users through a web interface without additional installations.
 
-This theoretical foundation supports the project’s overall objective to provide users with a comprehensive, efficient, and interactive news analysis platform.
+## For more infomation, please refer to '最终版结题报告.pdf'. There are detailed software specification, dataset settings and training settings. Thanks a lot for reading
